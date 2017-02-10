@@ -18,5 +18,5 @@ directories exist which hold the text descriptions and image files. The user nam
 sent to the server as key value pairs, using the 'GET' method for CGI. If the user clicks the "Submit" button, the
 form-data will be handled by a CGI server contained in animals.exe.
  
-NOTE: Run program in "C:\\inetpub\\wwwroot\\NZBirdsTexts\\"
+NOTE: Run program in "C:\\inetpub\\wwwroot\\"
 
