@@ -1,0 +1,109 @@
+﻿<!-- 
+ FILE : bird_post.html
+ PROJECT : PROG2000 - Assignment #2
+ PROGRAMMER : lpcSetProg
+ FIRST VERSION : 2016-09-10
+ DESCRIPTION :
+ 
+ This application is an HTML file, that uses a form to provide parameters to a web server (using PHP).
+ The page asks user for a name and validates using JS, and provides a combo box to select from 1 of 6 birds 
+ native to New Zealand. The user name and bird selection are sent to the server as key value pairs, using the 'post' 
+ method for PHP.  If the user clicks the "Submit" button, the form-data will be handled by a PHP server contained in animals.php.
+ 
+ 
+ NOTE: To clarify, birds are 'animals'  under the kingdom called Animalia
+--> 
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>New Zealand Bird Conservatory</title>
+ 
+<script>
+
+
+// ------------------------------------------------------------
+//           FUNCTION DEFINITIONS
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+//            validateFormt()
+// - This function ensures the user has inserted their name into the form,
+// before values are sent. 
+// ------------------------------------------------------------
+function validateForm() {
+    var x = document.forms["userForm"]["name"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+
+
+// ------------------------------------------------------------
+//            END OF FUNCTION DEFINITIONS
+// ------------------------------------------------------------
+
+
+</script>
+</head>
+<body>
+
+
+
+
+<H1>New Zealand Native Bird Conservatory </H1>
+<p>&nbsp;</p>
+
+    
+
+
+<form  
+ name="userForm" 
+ action="animals.php"
+ onsubmit="return validateForm()"
+ method="post"
+>
+	
+	<!--The <fieldset> element is used to group related data in a form (w3 schools)-->
+	<fieldset style="width: 546px">
+	<legend>New Zealand Native Bird Conservatory:</legend>
+	
+	<!--User Name Input Text Box -->
+	<br>User Name:<br>&nbsp;<input type="text" name="name"><br><br>
+	<br>
+	
+	<!-- Bird Selection Combo Box-->
+	<select name="userSelect" ">
+  	<option disabled selected value> -- Select a bird -- </option>
+  	<option value="Kea">Kea</option>
+  	<option value="Kiwi">Kiwi</option>
+  	<option value="Kakapo">Kakapo</option>
+  	<option value="Tui">Tui</option>
+  	<option value="Moa">Moa</option>
+  	<option value="Takahe">Takahe</option>
+  	</select>&nbsp;
+  
+ 
+  	<!--Submit Box-->
+    <input type="submit" value="Submit">
+    
+    </fieldset>
+    
+<br>
+    
+</form>
+
+
+<!--<p>If you click the "Submit" button, the form-data will be sent to a page called "animals.php".</p>-->
+
+</body>
+</html>
+
+
+
